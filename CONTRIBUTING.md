@@ -1,0 +1,1 @@
+In most cases, all you need to do for a new release of Redpanda is update the `url`, `version`, and `sha256` fields. To test, you can run `brew reinstall ./Formula/redpanda.rb`.
