@@ -14,7 +14,7 @@ class Redpanda < Formula
     def caveats; <<~EOS
         Redpanda - The fastest queue in the west!
 
-        This installs RPK which, with Docker, enables the running of local cluster 
+        This installs RPK which, with Docker, enables the running of a local cluster 
         for testing purposes.
 
         You can start a 3 node cluster locally using the following command: 
