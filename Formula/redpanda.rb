@@ -23,7 +23,7 @@ class Redpanda < Formula
         
         You can then interact with the cluster using commands like the following: 
 
-            rpk api status
+            rpk topic list
         
         When done, you can stop and delete the cluster with the following command:
             
