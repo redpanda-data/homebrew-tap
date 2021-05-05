@@ -1,9 +1,9 @@
 class Redpanda < Formula
     desc "Fastest Queue in the West"
     homepage "https://www.vectorized.io"
-    url "https://github.com/vectorizedio/redpanda/releases/download/v21.4.15/rpk-darwin-amd64.zip"
-    version "21.4.15"
-    sha256 "bf36fd5fe798971d5ab73904e210b5322f4bc8e652b25d231b7c62eaba95833c"
+    url "https://github.com/vectorizedio/redpanda/releases/download/v21.5.1/rpk-darwin-amd64.zip"
+    version "21.5.1"
+    sha256 "9481b13f3222de71ae1b1f4d96fbc99d229379727cda31b08e1079fa4003dc5a"
 
     bottle :unneeded
 
