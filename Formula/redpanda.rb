@@ -5,8 +5,6 @@ class Redpanda < Formula
     version "21.9.6"
     sha256 "bbdc5365db78bfa05a6ea046009d2a19dbeb9996023390051d84f2efd4da59f5"
 
-    bottle :unneeded
-
     def install
         bin.install "rpk"
     end
