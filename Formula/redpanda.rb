@@ -1,9 +1,9 @@
 class Redpanda < Formula
     desc "Fastest Queue in the West"
     homepage "https://www.vectorized.io"
-    url "https://github.com/vectorizedio/redpanda/releases/download/v21.11.12/rpk-darwin-amd64.zip"
-    version "21.11.12"
-    sha256 "ae75b3feb3a198381f001e01fb057f35b30ed32ad7b5472e5ac554c2e7c6f152"
+    url "https://github.com/vectorizedio/redpanda/releases/download/v21.11.13/rpk-darwin-amd64.zip"
+    version "21.11.13"
+    sha256 "6debd9dea4ca665a44bfd598968dd430bc831386adcf2fc4c2069498b76bb1b9"
 
     def install
         bin.install "rpk"
