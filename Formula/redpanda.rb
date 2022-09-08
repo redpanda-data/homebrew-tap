@@ -1,5 +1,5 @@
 class Redpanda < Formula
-    desc "Fastest Queue in the West"
+    desc "Redpanda CLI & toolbox"
     homepage "https://redpanda.com"
     url "https://github.com/redpanda-data/redpanda/releases/download/v22.2.2/rpk-darwin-amd64.zip"
     version "22.2.2"
