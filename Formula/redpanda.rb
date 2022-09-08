@@ -15,7 +15,7 @@ class Redpanda < Formula
         Redpanda clusters. They also let you manage topics, groups,
         and access control lists (ACLs).
 
-        Start a three-node cluster locally:
+        Start a three-node docker cluster locally:
 
             rpk container start -n 3
         
@@ -23,7 +23,7 @@ class Redpanda < Formula
 
             rpk topic list
         
-        When done, stop and delete the cluster:
+        When done, stop and delete the docker cluster:
             
             rpk container purge
 
