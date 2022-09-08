@@ -10,10 +10,10 @@ class Redpanda < Formula
     end
 
     def caveats; <<~EOS
-        Redpanda - The fastest queue in the west!
-
-        This installs RPK which, with Docker, enables the running of a local cluster 
-        for testing purposes.
+        Redpanda Keeper (rpk) is Redpanda's command line interface (CLI)
+        utility. The rpk commands let you configure, manage, and tune
+        Redpanda clusters. They also let you manage topics, groups,
+        and access control lists (ACLs).
 
         Start a three-node cluster locally:
 
