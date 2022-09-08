@@ -1,6 +1,6 @@
-# Redpanda [Homebrew] Tap
+# Redpanda Homebrew Tap
 
-This is the official source for installing [Redpanda] with Homebrew.
+This is the official source for installing [Redpanda] with [Homebrew].
 
 ## Installing
 
