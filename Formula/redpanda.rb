@@ -27,8 +27,7 @@ class Redpanda < Formula
             
             rpk container purge
 
-        For information on how to setup production evironments, check out our
-        installation guide here: https://vectorized.io/documentation/setup-guide/
+        For more examples and guides, visit: https://docs.redpanda.com/
     EOS
     end
 end
