@@ -5,18 +5,18 @@ This is the official source for installing [Redpanda] with Homebrew.
 ## Installing
 
 ```shell
-$ brew install vectorizedio/tap/redpanda
+$ brew install redpanda-data/tap/redpanda
 ```
 
 Alternately, you can configure the tap and install the package separately:
 
 ``` shell
-$ brew tap vectorizedio/tap
+$ brew tap redpanda-data/tap
 $ brew install redpanda
 ```
 
 Please referrer to our complete [Documentation] on how to install Redpanda on other environments.
 
-[Redpanda]: https://vectorized.io
+[Redpanda]: https://redpanda.com
 [Homebrew]: https://brew.sh
-[Documentation]: https://vectorized.io/documentation
+[Documentation]: https://docs.redpanda.com
