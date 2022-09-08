@@ -15,15 +15,15 @@ class Redpanda < Formula
         This installs RPK which, with Docker, enables the running of a local cluster 
         for testing purposes.
 
-        You can start a 3 node cluster locally using the following command: 
+        Start a three-node cluster locally:
 
             rpk container start -n 3
         
-        You can then interact with the cluster using commands like the following: 
+        Interact with the cluster using commands like:
 
             rpk topic list
         
-        When done, you can stop and delete the cluster with the following command:
+        When done, stop and delete the cluster:
             
             rpk container purge
 
