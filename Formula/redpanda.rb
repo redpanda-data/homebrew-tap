@@ -1,6 +1,6 @@
 class Redpanda < Formula
-    desc "Fastest Queue in the West"
-    homepage "https://www.vectorized.io"
+    desc "Redpanda CLI & toolbox"
+    homepage "https://redpanda.com"
     url "https://github.com/redpanda-data/redpanda/releases/download/v22.2.2/rpk-darwin-amd64.zip"
     version "22.2.2"
     sha256 "7fb07b933bcbfc16a1f02b815b47a70a62ecee303aa92a9c03c6119c70219319"
@@ -10,25 +10,24 @@ class Redpanda < Formula
     end
 
     def caveats; <<~EOS
-        Redpanda - The fastest queue in the west!
+        Redpanda Keeper (rpk) is Redpanda's command line interface (CLI)
+        utility. The rpk commands let you configure, manage, and tune
+        Redpanda clusters. They also let you manage topics, groups,
+        and access control lists (ACLs).
 
-        This installs RPK which, with Docker, enables the running of a local cluster 
-        for testing purposes.
-
-        You can start a 3 node cluster locally using the following command: 
+        Start a three-node docker cluster locally:
 
             rpk container start -n 3
         
-        You can then interact with the cluster using commands like the following: 
+        Interact with the cluster using commands like:
 
             rpk topic list
         
-        When done, you can stop and delete the cluster with the following command:
+        When done, stop and delete the docker cluster:
             
             rpk container purge
 
-        For information on how to setup production evironments, check out our
-        installation guide here: https://vectorized.io/documentation/setup-guide/
+        For more examples and guides, visit: https://docs.redpanda.com/
     EOS
     end
 end
