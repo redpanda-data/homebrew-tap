@@ -1,9 +1,9 @@
 class Redpanda < Formula
     desc "Redpanda CLI & toolbox"
     homepage "https://redpanda.com"
-    url "https://github.com/redpanda-data/redpanda/releases/download/v22.2.2/rpk-darwin-amd64.zip"
-    version "22.2.2"
-    sha256 "7fb07b933bcbfc16a1f02b815b47a70a62ecee303aa92a9c03c6119c70219319"
+    url "https://github.com/redpanda-data/redpanda/releases/download/v22.2.3/rpk-darwin-amd64.zip"
+    version "22.2.3"
+    sha256 "3f75b96fd7e237e24ab6ac4a8f672d9ae6650a2cd902394054b4245d35a4aba9"
 
     def install
         bin.install "rpk"
