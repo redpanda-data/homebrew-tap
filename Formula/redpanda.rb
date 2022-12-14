@@ -10,16 +10,16 @@ class Redpanda < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v22.3.6/rpk_22.3.6_darwin_arm64.tar.gz"
-      sha256 "90a94cc64d95e4a09c8119b22af6bf54243c628d54bcda02d1753d370201e6a8"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v22.3.6/rpk-darwin-arm64.zip"
+      sha256 "982ae7b4de34eecf8c735b3375808da4e06aa16bfd5122c39577ca1a5edd077f"
 
       def install
         bin.install "rpk"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v22.3.6/rpk_22.3.6_darwin_amd64.tar.gz"
-      sha256 "0ff26fd599a5b32ba7e051474c63ca90f755892f617b6323034df05b75868864"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v22.3.6/rpk-darwin-amd64.tar.gz"
+      sha256 "f49c45a3b6747085b665306434214185c4d401848f12ed266acccb42dcd5932f"
 
       def install
         bin.install "rpk"
