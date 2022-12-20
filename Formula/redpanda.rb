@@ -5,20 +5,20 @@
 class Redpanda < Formula
   desc "Redpanda CLI & toolbox"
   homepage "https://redpanda.com"
-  version "22.3.8"
+  version "22.3.9"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v22.3.8/rpk-darwin-arm64.zip"
-      sha256 "721abeaf860206368d52eebb7ff709008a32d869ab6da45c9c5bb9fc189936bb"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v22.3.9/rpk-darwin-arm64.zip"
+      sha256 "461786d07da4e8eefbb301cf03b2c1948ab8e1c6f2828cfaa7ba2ade6882cc92"
 
       def install
         bin.install "rpk"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v22.3.8/rpk-darwin-amd64.zip"
-      sha256 "7ec795d8db24177d39d221ba209392f67f611b10e694b302869eca657ccfed0c"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v22.3.9/rpk-darwin-amd64.zip"
+      sha256 "5d79dde1cdb422c923f660e299ca82c587491560fd58c117cf0b1632606c6fd2"
 
       def install
         bin.install "rpk"
@@ -28,16 +28,16 @@ class Redpanda < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v22.3.8/rpk-linux-arm64.zip"
-      sha256 "da77c70e5a7be1617905fa27c2a4d818604515e66d4b71c182e5fd03b989b053"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v22.3.9/rpk-linux-arm64.zip"
+      sha256 "8b41078bfb510f883f2e02ae264a7f8c3f1fa00516435b24faf9f67f200bf352"
 
       def install
         bin.install "rpk"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v22.3.8/rpk-linux-amd64.zip"
-      sha256 "ce1caa9ba621a2e37b08160c89ffc17318f952f7b82340df1b67b3ef6607edaf"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v22.3.9/rpk-linux-amd64.zip"
+      sha256 "d7514743de75399b424d5e2c84d92fff0908dd511ea4fdd86e1661cf1a57f578"
 
       def install
         bin.install "rpk"
