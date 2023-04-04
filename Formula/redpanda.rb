@@ -5,20 +5,20 @@
 class Redpanda < Formula
   desc "Redpanda CLI & toolbox"
   homepage "https://redpanda.com"
-  version "23.1.4"
+  version "23.1.5"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.1.4/rpk-darwin-arm64.zip"
-      sha256 "87b3e19ad1280664fffd737742cf45e4721d2f2df67a3c8843af207b78ed5327"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.1.5/rpk-darwin-arm64.zip"
+      sha256 "b11565b177581e73b80d5f4aaaea4ae98d1fe8703fa52f43ab9c2c30d9e007f9"
 
       def install
         bin.install "rpk"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.1.4/rpk-darwin-amd64.zip"
-      sha256 "c4055ae84dbd3ae8d29ba5664e868882223d67487f33aab1ec974c9ec5ea3797"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.1.5/rpk-darwin-amd64.zip"
+      sha256 "cbc0c264dd9e27880935a9fa67525456b7878195e16849c7f05656bbca3e4931"
 
       def install
         bin.install "rpk"
@@ -27,17 +27,17 @@ class Redpanda < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.1.4/rpk-linux-amd64.zip"
-      sha256 "b560499a11a45a7e3b4e15b31ffa670b8f5a032cd17195342059f2b8e75820a5"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.1.5/rpk-linux-arm64.zip"
+      sha256 "595c7db59fc270e8ac92897460ee27d8d103914d9099e8e91ba766b189945b7c"
 
       def install
         bin.install "rpk"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.1.4/rpk-linux-arm64.zip"
-      sha256 "3216f69a716ddc0f889d37ab3a867c28f0471ed5063d316d92ba1ca2c9cbfe76"
+    if Hardware::CPU.intel?
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.1.5/rpk-linux-amd64.zip"
+      sha256 "0c3dbe136dc7f6a185230d9bb493e802512f8702f0b687462da8b4f17a26bd92"
 
       def install
         bin.install "rpk"
