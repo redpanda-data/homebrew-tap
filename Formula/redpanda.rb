@@ -5,20 +5,20 @@
 class Redpanda < Formula
   desc "Redpanda CLI & toolbox"
   homepage "https://redpanda.com"
-  version "23.2.16"
+  version "23.2.17"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.16/rpk-darwin-amd64.zip"
-      sha256 "04882dd3424677eabe4cde0cba8e79b387187fd7939a10130cc255578b935897"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.17/rpk-darwin-amd64.zip"
+      sha256 "5cba176a21d9bc556224f5777aa50023ad1eb823b5fad9e472cc09fba611d163"
 
       def install
         bin.install "rpk"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.16/rpk-darwin-arm64.zip"
-      sha256 "b99f8873d74f74c3c74e43fef653e53a0417a007ca2618e74c8f9a0dc34f2674"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.17/rpk-darwin-arm64.zip"
+      sha256 "5025b3aaff1678a81601d31add3d3c97bb411dba2f6f1ae3d3b5771d4624a029"
 
       def install
         bin.install "rpk"
@@ -28,16 +28,16 @@ class Redpanda < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.16/rpk-linux-arm64.zip"
-      sha256 "e3b593bc0b7f44d97ca297634f518c0731cdd2a35fedc956335b8f1ea05b5550"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.17/rpk-linux-arm64.zip"
+      sha256 "2d64679dd284b5da4ea367ee527b8f4a10b26aa6affb7579c1833f530e545ef1"
 
       def install
         bin.install "rpk"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.16/rpk-linux-amd64.zip"
-      sha256 "5ad4b5fe2e5e074d3cefbfb66cf15c7ce4aac13a61e654600dca627e5bd8e959"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.17/rpk-linux-amd64.zip"
+      sha256 "04cadd7e50a01e5ed484fb84cc1d08ab11cb01e63f9289bd50aa3c7c3c170349"
 
       def install
         bin.install "rpk"
