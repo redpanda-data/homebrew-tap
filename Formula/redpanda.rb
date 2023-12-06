@@ -14,6 +14,7 @@ class Redpanda < Formula
 
       def install
         bin.install "rpk"
+        generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
     end
     if Hardware::CPU.arm?
@@ -22,6 +23,7 @@ class Redpanda < Formula
 
       def install
         bin.install "rpk"
+        generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
     end
   end
@@ -33,6 +35,7 @@ class Redpanda < Formula
 
       def install
         bin.install "rpk"
+        generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
     end
     if Hardware::CPU.intel?
@@ -41,6 +44,7 @@ class Redpanda < Formula
 
       def install
         bin.install "rpk"
+        generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
     end
   end
