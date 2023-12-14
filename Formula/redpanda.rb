@@ -5,20 +5,20 @@
 class Redpanda < Formula
   desc "Redpanda CLI & toolbox"
   homepage "https://redpanda.com"
-  version "23.2.18"
+  version "23.2.19"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.18/rpk-darwin-amd64.zip"
-      sha256 "b843d813e499c537b95c0d8506afecea6f85340847f7835199bfc33ca45ff6d4"
+    if Hardware::CPU.arm?
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.19/rpk-darwin-arm64.zip"
+      sha256 "8d8759465985d49f6017a8c57daf83ed1e16efc7f1a2641f5b44aff45be97176"
 
       def install
         bin.install "rpk"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.18/rpk-darwin-arm64.zip"
-      sha256 "9db40c118f63909ad4018d5b8ad9b8111b31b8bc1b53b1bf565f23677e57f0ee"
+    if Hardware::CPU.intel?
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.19/rpk-darwin-amd64.zip"
+      sha256 "03a4ea5515e88770a3907ed3dcd47b90ad492d34450a1f503cce94ddfe6b02a5"
 
       def install
         bin.install "rpk"
@@ -27,17 +27,17 @@ class Redpanda < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.18/rpk-linux-arm64.zip"
-      sha256 "b492274a68759a116365e6df5c122dcd9aa4f5e8e0948f208383c60d1e7d23e4"
+    if Hardware::CPU.intel?
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.19/rpk-linux-amd64.zip"
+      sha256 "c50f052188743c172d3e9f9b1aa704498f235a92b4b3673bf11309b34d98a81b"
 
       def install
         bin.install "rpk"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.18/rpk-linux-amd64.zip"
-      sha256 "d061ec6df84b5f36d4151598b1419d68a013188998617f3f132469209c888626"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.2.19/rpk-linux-arm64.zip"
+      sha256 "4cc1338c7cfceb732a6d613951c55b92cd3a37896b526fbfac296a41ad7d1efa"
 
       def install
         bin.install "rpk"
