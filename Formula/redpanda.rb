@@ -5,12 +5,12 @@
 class Redpanda < Formula
   desc "Redpanda CLI & toolbox"
   homepage "https://redpanda.com"
-  version "23.3.7"
+  version "23.3.8"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.3.7/rpk-darwin-arm64.zip"
-      sha256 "83c7b88338c3f283ae08fc6a363b9e2f01ad2d800bb7959446cdf025e4e78082"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.3.8/rpk-darwin-arm64.zip"
+      sha256 "114cf66ca2ed3e790e48f1df00a8334216dbbb576b73473fade21e275542f3c3"
 
       def install
         bin.install "rpk"
@@ -18,8 +18,8 @@ class Redpanda < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.3.7/rpk-darwin-amd64.zip"
-      sha256 "092840335270be6f2183ebf0171adaeab4b63be3d9262b4cf5822d5041d542e1"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.3.8/rpk-darwin-amd64.zip"
+      sha256 "afcf50dbb9e64f793a709bffb9069ffbb7951af3fbe67213564b6a0289bca1c9"
 
       def install
         bin.install "rpk"
@@ -29,18 +29,18 @@ class Redpanda < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.3.7/rpk-linux-arm64.zip"
-      sha256 "3b4cd128f0dbc71195fcbf417fada32108c0c317ba6e596d5a654d29de586b76"
+    if Hardware::CPU.intel?
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.3.8/rpk-linux-amd64.zip"
+      sha256 "582f998edac5c4bd4ef96ff35a9ece7cab8ebfa021cc02bd815b20208a843677"
 
       def install
         bin.install "rpk"
         generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v23.3.7/rpk-linux-amd64.zip"
-      sha256 "b291d1d4239bf46f6e6c4d6da5f6a25f93799a0f69503d8f6e2a2f95f3d2a54f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/redpanda-data/redpanda/releases/download/v23.3.8/rpk-linux-arm64.zip"
+      sha256 "97325326ca5bb4977ada5a4567374a98667a0831bad4978d4be5b4c7fab0ad33"
 
       def install
         bin.install "rpk"
