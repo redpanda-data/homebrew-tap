@@ -10,19 +10,21 @@ class Redpanda < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/redpanda-data/redpanda/releases/download/v24.1.6/rpk-darwin-arm64.zip"
-      sha256 "5b9252ebe44469c399e37223bfdefc8ef69b8e0db555af2c802aef73e04dd441"
+      sha256 "4c7b01f508731c79ff35f8a9c7aeb6645d1b548c4a1e419694415f809c33c1e8"
 
       def install
         bin.install "rpk"
+        bin.install ".rpk.ac-connect"
         generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
     end
     if Hardware::CPU.intel?
       url "https://github.com/redpanda-data/redpanda/releases/download/v24.1.6/rpk-darwin-amd64.zip"
-      sha256 "f6266fe8523bb8d016f4ffe4a65d81a4060f5247d00e22a09cd411662eba6e1d"
+      sha256 "412654b9416df5551e1582702681682d38b6ba6d816b12e0739598bbdb37e3e0"
 
       def install
         bin.install "rpk"
+        bin.install ".rpk.ac-connect"
         generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
     end
@@ -31,19 +33,21 @@ class Redpanda < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/redpanda-data/redpanda/releases/download/v24.1.6/rpk-linux-arm64.zip"
-      sha256 "e52d1bfc0b3e271a735c7638d7b5fe4fb37a55c93e90b711c70a90079b51efaf"
+      sha256 "847e2673242387a202f85c325091402ff23f00f44c6bf4caee2ee21e1d6eecff"
 
       def install
         bin.install "rpk"
+        bin.install ".rpk.ac-connect"
         generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
     end
     if Hardware::CPU.intel?
       url "https://github.com/redpanda-data/redpanda/releases/download/v24.1.6/rpk-linux-amd64.zip"
-      sha256 "c4ebe3de5952061b79730a6e12902e4a089eba27846d31f066951b233812bfa7"
+      sha256 "a48d97135b2e4cc87b705782ca2ec8155efc68c88cc93c907561f83ea2797ca7"
 
       def install
         bin.install "rpk"
+        bin.install ".rpk.ac-connect"
         generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
     end
