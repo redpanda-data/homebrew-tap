@@ -5,12 +5,12 @@
 class Redpanda < Formula
   desc "Redpanda CLI & toolbox"
   homepage "https://redpanda.com"
-  version "24.1.12"
+  version "24.1.13"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v24.1.12/rpk-darwin-amd64.zip"
-      sha256 "20b254c4b939bee6a6d088d8afd0e3aecf7fad0e655c08cfd0ac240b04bbbeb6"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v24.1.13/rpk-darwin-amd64.zip"
+      sha256 "5615aeed9e2b442d27b67096faec91c20d164df93d53ceccf64c029aaecadff7"
 
       def install
         bin.install ".rpk.ac-connect"
@@ -19,8 +19,8 @@ class Redpanda < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v24.1.12/rpk-darwin-arm64.zip"
-      sha256 "454ab549e8b1161b0c4edea7ff111262921537f63f19ceb8967eb1093ea6457b"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v24.1.13/rpk-darwin-arm64.zip"
+      sha256 "e6307685ed9fc570ae2c91aa9e4d1670c22019586ef275a8970a2b800b16344a"
 
       def install
         bin.install ".rpk.ac-connect"
@@ -32,8 +32,8 @@ class Redpanda < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v24.1.12/rpk-linux-arm64.zip"
-      sha256 "969abbecac3696677aa25d13463fbb2249c398ebe9d247bf6f2967a7f4b36bc4"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v24.1.13/rpk-linux-arm64.zip"
+      sha256 "5e91a7e76ee1ca8cbc327aa59a84a906ce1be0faa44124edc4daed1ea22b4fc6"
 
       def install
         bin.install ".rpk.ac-connect"
@@ -42,8 +42,8 @@ class Redpanda < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v24.1.12/rpk-linux-amd64.zip"
-      sha256 "c78b11d56724ced2022e2be923658576dce29acbd14c46c1bd649d8b55a50af2"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v24.1.13/rpk-linux-amd64.zip"
+      sha256 "a228c59e9bf3fcc51bc481c9576bba8269367944583110a4a5390a243233d52d"
 
       def install
         bin.install ".rpk.ac-connect"
