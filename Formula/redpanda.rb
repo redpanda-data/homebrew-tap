@@ -5,12 +5,12 @@
 class Redpanda < Formula
   desc "Redpanda CLI & toolbox"
   homepage "https://redpanda.com"
-  version "24.2.3"
+  version "24.2.4"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.3/rpk-darwin-amd64.zip"
-      sha256 "c0000e78014b323a8b2d9514abde817a6127522196e3ca4f9599ba7fa5ccee8a"
+    if Hardware::CPU.arm?
+      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.4/rpk-darwin-arm64.zip"
+      sha256 "807df0db455897178475092decf4c50771e38b699de5e83859b84e081befa34d"
 
       def install
         bin.install ".rpk.ac-connect"
@@ -18,9 +18,9 @@ class Redpanda < Formula
         generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.3/rpk-darwin-arm64.zip"
-      sha256 "05992b90d41acfe1287ef2ddb00e611a266924867d2f3085f7149ab8cd0bea25"
+    if Hardware::CPU.intel?
+      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.4/rpk-darwin-amd64.zip"
+      sha256 "32e2d2607d682aec80351160ee5c703e1b798a55e20e05fb2ac11d71980f49be"
 
       def install
         bin.install ".rpk.ac-connect"
@@ -32,8 +32,8 @@ class Redpanda < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.3/rpk-linux-arm64.zip"
-      sha256 "53490823a2914e4e76ab8ba8a655997da17807f44789d319f075d542cb2ecc6a"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.4/rpk-linux-arm64.zip"
+      sha256 "a7042f8c5d02c749ed2b77bb49f9e0108add82dc99b33136d40c5c9ca152b498"
 
       def install
         bin.install ".rpk.ac-connect"
@@ -42,8 +42,8 @@ class Redpanda < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.3/rpk-linux-amd64.zip"
-      sha256 "f3fd0a92bc522b01d11f57246d68365666f12349acaf04171968c166af6a3771"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.4/rpk-linux-amd64.zip"
+      sha256 "260b159873c3e6dd367d4f7bde56f3967e39ebbd31091384548e38c112d4c732"
 
       def install
         bin.install ".rpk.ac-connect"
