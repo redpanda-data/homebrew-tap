@@ -5,25 +5,23 @@
 class Redpanda < Formula
   desc "Redpanda CLI & toolbox"
   homepage "https://redpanda.com"
-  version "24.2.4"
+  version "24.2.5"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.4/rpk-darwin-arm64.zip"
-      sha256 "807df0db455897178475092decf4c50771e38b699de5e83859b84e081befa34d"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.5/rpk-darwin-arm64.zip"
+      sha256 "06b31dc0dad958d70bce4071adfdd64c59c9836a8f85d67eba3cac59759e706a"
 
       def install
-        bin.install ".rpk.ac-connect"
         bin.install "rpk"
         generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.4/rpk-darwin-amd64.zip"
-      sha256 "32e2d2607d682aec80351160ee5c703e1b798a55e20e05fb2ac11d71980f49be"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.5/rpk-darwin-amd64.zip"
+      sha256 "df69ff2c407513cef98c16424bf8cc254456e974bed2650981d83ed5cf088d0e"
 
       def install
-        bin.install ".rpk.ac-connect"
         bin.install "rpk"
         generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
@@ -32,21 +30,19 @@ class Redpanda < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.4/rpk-linux-arm64.zip"
-      sha256 "a7042f8c5d02c749ed2b77bb49f9e0108add82dc99b33136d40c5c9ca152b498"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.5/rpk-linux-arm64.zip"
+      sha256 "5ea13725509b5d81b48f35695d8e265b34462ec9eeb2975b309d05f57e592edd"
 
       def install
-        bin.install ".rpk.ac-connect"
         bin.install "rpk"
         generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.4/rpk-linux-amd64.zip"
-      sha256 "260b159873c3e6dd367d4f7bde56f3967e39ebbd31091384548e38c112d4c732"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v24.2.5/rpk-linux-amd64.zip"
+      sha256 "6eeece0b29246f4a8d29e205ab810b41537bd714fa014c325cebb4f740f64521"
 
       def install
-        bin.install ".rpk.ac-connect"
         bin.install "rpk"
         generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
       end
