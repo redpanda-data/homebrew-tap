@@ -5,48 +5,52 @@
 class Redpanda < Formula
   desc "Redpanda CLI & toolbox"
   homepage "https://redpanda.com"
-  version "25.3.6"
+  version "25.3.7"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v25.3.6/rpk-darwin-amd64.zip"
-      sha256 "eea6e5e88683dbb31d11c84bd5c39544371e59fb18f8a5b551d2f1561c2131b6"
-
-      def install
-        bin.install "rpk"
-        generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
-      end
+      url "https://github.com/redpanda-data/redpanda/releases/download/v25.3.7/rpk-darwin-amd64.zip"
+      sha256 "6bc30d5e6aa2ec2c8b019dea810094f84d83564e06229d875dd6e8519b1ae51f"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v25.3.6/rpk-darwin-arm64.zip"
-      sha256 "f3a187d93c4a9b6f5a67f71a6120b469a9ed452320f21a50ac640181518060db"
-
-      def install
-        bin.install "rpk"
-        generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
-      end
+      url "https://github.com/redpanda-data/redpanda/releases/download/v25.3.7/rpk-darwin-arm64.zip"
+      sha256 "bcaf4f390213fa079d9c05ea7a3b52b12d947bbd9576434f4875e591d3129fb5"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v25.3.6/rpk-linux-arm64.zip"
-      sha256 "500926c0667f562adc8a082244448d0e15de4ac5300a319b81389647b9b60c7d"
-
-      def install
-        bin.install "rpk"
-        generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
-      end
+      url "https://github.com/redpanda-data/redpanda/releases/download/v25.3.7/rpk-linux-arm64.zip"
+      sha256 "5da6f9b4d14229f8251b15cef09d6258ab737b9abd1c5da52793ce57352a8484"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v25.3.6/rpk-linux-amd64.zip"
-      sha256 "2b586f8c8773bbacdb7fda7fc4462483dbd9fdd7e0ee9f8a686b99fe3e463e7e"
-
-      def install
-        bin.install "rpk"
-        generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
-      end
+      url "https://github.com/redpanda-data/redpanda/releases/download/v25.3.7/rpk-linux-amd64.zip"
+      sha256 "d3e1334ae72b54a9ef542432c80128891737d55dd66c3ab22937b79b43df598a"
     end
+  end
+
+  head do
+    url "https://github.com/redpanda-data/redpanda.git", branch: "dev"
+    depends_on "go" => :build
+  end
+
+  def install
+    if build.head?
+      head_rev = Utils.git_short_head
+      cd "src/go/rpk" do
+        go_bin = Formula["go"].opt_bin/"go"
+        ldflags = %W[
+          -s -w
+          -X github.com/redpanda-data/redpanda/src/go/rpk/pkg/cli/version.buildTime=#{time.iso8601}
+          -X github.com/redpanda-data/redpanda/src/go/rpk/pkg/cli/version.rev=#{head_rev}
+          -X github.com/redpanda-data/redpanda/src/go/rpk/pkg/cli/version.version=#{version}
+        ]
+        system go_bin, "build", *std_go_args(output: bin/"rpk", ldflags:), "./cmd/rpk"
+      end
+    else
+      bin.install "rpk"
+    end
+    generate_completions_from_executable(bin/"rpk", "generate", "shell-completion", base_name: "rpk")
   end
 
   def caveats
