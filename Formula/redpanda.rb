@@ -5,27 +5,27 @@
 class Redpanda < Formula
   desc "Redpanda CLI & toolbox"
   homepage "https://redpanda.com"
-  version "26.1.11"
+  version "26.1.12"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v26.1.11/rpk-darwin-amd64.zip"
-      sha256 "e22b739d11bf39ade27d836cbe2f242eafac7d6667dcc272e081a0ec1a6b6ae8"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v26.1.12/rpk-darwin-amd64.zip"
+      sha256 "ba41283047db478a2bf526bd5b95417c22987ff4d620029cd39d8fce7ae47e51"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v26.1.11/rpk-darwin-arm64.zip"
-      sha256 "dda0cf2994d348aa15146b6b9aa233bca8ab51eb7cb56d13106dd5a3c2093580"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v26.1.12/rpk-darwin-arm64.zip"
+      sha256 "d5b7769d06bd979b6443410eee4885ab1968aae018652625da873bf21b97b40b"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v26.1.11/rpk-linux-arm64.zip"
-      sha256 "1759d697e1200427a562f395258c6213645606bac6b65f495bcaa935d4dcb08e"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v26.1.12/rpk-linux-arm64.zip"
+      sha256 "7c63630dd4534a4287bf74274db198c0f9eeeebb30da711eff9390d60f768593"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redpanda-data/redpanda/releases/download/v26.1.11/rpk-linux-amd64.zip"
-      sha256 "1f59285360159974c91f07bc0e5cd65350c0a7b76cb097c8a2608d7d89504121"
+      url "https://github.com/redpanda-data/redpanda/releases/download/v26.1.12/rpk-linux-amd64.zip"
+      sha256 "dca55216f0e9d992af4dae7440a04957b072364e3e20e4946c7d3685d576ba27"
     end
   end
 
