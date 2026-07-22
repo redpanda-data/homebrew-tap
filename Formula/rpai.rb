@@ -11,7 +11,7 @@ class Rpai < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://dl.redpanda.com/public/rpk-plugins/raw/names/rpai-darwin-amd64/versions/0.2.27/rpai_darwin_amd64.tar.gz"
-      sha256 "e54b8eec6fe0155fe2465f6b34e7149acfbc82d7d8ab5a828781a35856a61e6e"
+      sha256 "a9a1fe0a75ac64ebae597e9d458d4558e2d317c7fc82f457b14065b00d6a2db5"
 
       define_method(:install) do
         libexec.install "rpai"
@@ -22,7 +22,7 @@ class Rpai < Formula
     end
     if Hardware::CPU.arm?
       url "https://dl.redpanda.com/public/rpk-plugins/raw/names/rpai-darwin-arm64/versions/0.2.27/rpai_darwin_arm64.tar.gz"
-      sha256 "1a9ff23aa7c682d7f31c2ae631ce015d325f240412bc7d237d222abbb92dfaeb"
+      sha256 "80b82660c08b34c670a55765436e9b5e0aa3db9da4943c8976b37a1c6f661cb3"
 
       define_method(:install) do
         libexec.install "rpai"
@@ -36,7 +36,7 @@ class Rpai < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://dl.redpanda.com/public/rpk-plugins/raw/names/rpai-linux-amd64/versions/0.2.27/rpai_linux_amd64.tar.gz"
-      sha256 "5de1979845910e3de4202ee756b9cbd2c675362fdd444753383469baf5215f67"
+      sha256 "b4e784eace85fcf9cad4ffc833a449192636c1605d1e65417cd37e5ae72f6317"
       define_method(:install) do
         libexec.install "rpai"
         bin.install_symlink libexec/"rpai" => "rpai"
@@ -46,7 +46,7 @@ class Rpai < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://dl.redpanda.com/public/rpk-plugins/raw/names/rpai-linux-arm64/versions/0.2.27/rpai_linux_arm64.tar.gz"
-      sha256 "d2e4bec86d3f89ca6a56683839fab2aa74bdb0b025d0cb75678108686c862522"
+      sha256 "e345c022631b120875130ed6d60e8d07ef0f9b2385dcba26a68b87c1298e1fbc"
       define_method(:install) do
         libexec.install "rpai"
         bin.install_symlink libexec/"rpai" => "rpai"
