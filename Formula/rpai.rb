@@ -5,13 +5,13 @@
 class Rpai < Formula
   desc "Redpanda AI CLI — manage LLM providers, MCP servers, and connections"
   homepage "https://redpanda.com"
-  version "0.2.30"
+  version "0.2.31"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://dl.redpanda.com/public/rpk-plugins/raw/names/rpai-darwin-amd64/versions/0.2.30/rpai_darwin_amd64.tar.gz"
-      sha256 "b1f00268d9c24f844484425c4a5a559d5f7598c53dcf959a2e8a30f84843fd1c"
+      url "https://dl.redpanda.com/public/rpk-plugins/raw/names/rpai-darwin-amd64/versions/0.2.31/rpai_darwin_amd64.tar.gz"
+      sha256 "51fdcb42a241397931302a2bcbc52c559ef77c0f36b4ff3c3495edd9cef4bd09"
 
       define_method(:install) do
         libexec.install "rpai"
@@ -21,8 +21,8 @@ class Rpai < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://dl.redpanda.com/public/rpk-plugins/raw/names/rpai-darwin-arm64/versions/0.2.30/rpai_darwin_arm64.tar.gz"
-      sha256 "cda17e024e73972ed4b1eb1d834b9598d81fea48d6f82a39de6a303e09ed88ab"
+      url "https://dl.redpanda.com/public/rpk-plugins/raw/names/rpai-darwin-arm64/versions/0.2.31/rpai_darwin_arm64.tar.gz"
+      sha256 "d7f8093b8038f651183a785280bf10721979939159d9b192bed231bd8ec6eb74"
 
       define_method(:install) do
         libexec.install "rpai"
@@ -35,8 +35,8 @@ class Rpai < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://dl.redpanda.com/public/rpk-plugins/raw/names/rpai-linux-amd64/versions/0.2.30/rpai_linux_amd64.tar.gz"
-      sha256 "3c0ce780deaa8e555807023f37927223f40c8f7fb826b316ddb9193c7cb46605"
+      url "https://dl.redpanda.com/public/rpk-plugins/raw/names/rpai-linux-amd64/versions/0.2.31/rpai_linux_amd64.tar.gz"
+      sha256 "0b50428723932684022bb0f31a1e0bc559feb26395d2e1ac8f725361e5d4903b"
       define_method(:install) do
         libexec.install "rpai"
         bin.install_symlink libexec/"rpai" => "rpai"
@@ -45,8 +45,8 @@ class Rpai < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://dl.redpanda.com/public/rpk-plugins/raw/names/rpai-linux-arm64/versions/0.2.30/rpai_linux_arm64.tar.gz"
-      sha256 "443c7d460d54db8aa7c52f68c4454dd70df4171b8d53d121fae3f4b693e4a50a"
+      url "https://dl.redpanda.com/public/rpk-plugins/raw/names/rpai-linux-arm64/versions/0.2.31/rpai_linux_arm64.tar.gz"
+      sha256 "7586c5fed5f0f8f58fa0a48b4185c30c7d030a8a601667cc33125faa3a55ee0d"
       define_method(:install) do
         libexec.install "rpai"
         bin.install_symlink libexec/"rpai" => "rpai"
